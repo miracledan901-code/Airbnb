@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - Staybnb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Unique details page layout extensions using your styling structure */
+        .details-container { padding-top: 120px; }
+        .house-title { font-size: 26px; font-weight: 600; margin-bottom: 5px; }
+        .house-info { font-size: 14px; color: #333; margin-bottom: 20px; }
+        
+        .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-gap: 10px; margin-bottom: 30px; border-radius: 15px; overflow: hidden; }
+        .gallery-img-large { width: 100%; height: 100%; min-height: 350px; object-fit: cover; }
+        .gallery-sidebar { display: grid; grid-template-rows: 1fr 1fr; grid-gap: 10px; }
+        .gallery-sidebar img { width: 100%; height: 170px; object-fit: cover; }
+
+        .content-flow { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 5px; }
+        .main-details { flex-basis: 60%; }
+        .main-details h2 { font-size: 22px; font-weight: 500; margin-bottom: 10px; border-b: 1px solid #ccc; padding-bottom: 15px;}
+        .main-details p { color: #555; line-height: 24px; margin: 15px 0; }
+        
+        .booking-box { flex-basis: 35%; border: 1px solid #ccc; padding: 25px; border-radius: 12px; shadow: 0 10px 15px rgba(0,0,0,0.05); background: #fff; height: fit-content; }
+        .booking-box h3 { font-size: 22px; margin-bottom: 15px; }
+        .booking-box span { font-size: 14px; font-weight: 400; color: #555; }
+        .booking-form label { display: block; font-weight: 600; font-size: 12px; margin-bottom: 5px; margin-top: 10px; }
+        .booking-form input, .booking-form select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; }
+        .reserve-btn { background: #ff5361; color: #fff; width: 100%; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 20px; display: block; text-align: center; text-decoration: none;}
+
+        @media only screen and (max-width: 768px) {
+            .gallery { grid-template-columns: 1fr; }
+            .gallery-sidebar { display: none; }
+            .main-details, .booking-box { flex-basis: 100%; }
+            .booking-box { margin-top: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navBar" style="background: #000; padding: 20px 6%;">
+        <img src="logo.png" alt="logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Popular Place</a></li>
+            <li><a href="#" class="active">Details</a></li>
+            <li><a href="trips.html">My Trips</a></li>
+        </ul>
+        <a href="#" class="register-btn">Register Now</a>
+        <i class="fa-solid fa-bars" onclick="togglebtn()"></i>
+    </nav>
+
+    <div class="container details-container">
+        <h1 class="house-title">Wren Alpine Timber House</h1>
+        <p class="house-info"><i class="fa-solid fa-star"></i> 4.95 · 82 reviews · Swiss Alps, Switzerland</p>
+        
+        <div class="gallery">
+            <img src="image-2.png" class="gallery-img-large" alt="Main View">
+            <div class="gallery-sidebar">
+                <img src="image-3.png" alt="Interior">
+                <img src="image-4.png" alt="Bedroom">
+            </div>
+            <div class="gallery-sidebar">
+                <img src="image-5.png" alt="Kitchen">
+                <img src="image-6.png" alt="Balcony">
+            </div>
+        </div>
+
+        <div class="content-flow">
+            <div class="main-details">
+                <h2>Entire cabin hosted by Miracle Dan</h2>
+                <p>6 guests · 3 bedrooms · 4 beds · 2 baths</p>
+                <hr style="border: 0; height: 1px; background: #ddd; margin: 20px 0;">
+                <p>Enjoy panoramic views of the glacier terrain from the comfort of your private heated terrace. This location features custom crafted local wood design fixtures, high-speed fiber internet connection, and a completely private outdoor hot tub space.</p>
+            </div>
+
+            <div class="booking-box">
+                <h3>$250 <span>/ night</span></h3>
+                <form class="booking-form">
+                    <label>CHECK-IN</label>
+                    <input type="date" value="2026-07-10">
+                    
+                    <label>CHECK-OUT</label>
+                    <input type="date" value="2026-07-17">
+
+                    <label>GUESTS</label>
+                    <select>
+                        <option>1 Guest</option>
+                        <option selected>2 Guests</option>
+                        <option>3 Guests</option>
+                    </select>
+                    <a href="trips.html" class="reserve-btn">Confirm Booking</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var navBar = document.getElementById("navBar");
+        function togglebtn(){ navBar.classList.toggle("showmenu"); }
+    </script>
+</body>
+</html>
